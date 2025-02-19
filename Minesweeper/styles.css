@@ -1,0 +1,121 @@
+.forClick {
+  background-color: rgb(120, 120, 206);
+  border-radius: 4px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.mine {
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  font-size: 16px;
+  line-height: 30px;
+  text-align: center;
+  vertical-align: middle;
+  display: inline-block;
+}
+
+
+body {
+  background-color: #c8f7c5; /* 深灰色 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.oddmine{
+  background-color: rgb(97, 211, 97);
+}
+
+.evenmine{
+  background-color: rgb(44, 240, 44);
+}
+
+.bomb{
+  background-color: red;
+}
+
+.normalmine{
+  background-color: rgb(231, 215, 142);
+}
+
+
+
+/* 遮罩層的樣式，半透明背景 */
+#overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.7); /* 半透明黑色 */
+  display: none; /* 預設隱藏 */
+  z-index: 9999; /* 確保遮罩在最上層 */
+}
+
+/* 重新開始按鈕的樣式，會顯示在中央 */
+#buttonHere {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10000;
+  display: none; /* 預設隱藏 */
+}
+
+/* 重新開始按鈕樣式 */
+#reloadButton {
+  background-color: rgb(120, 120, 206);
+  border-radius: 4px;
+  font-size: 20px;
+  cursor: pointer;
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+}
+
+#reloadButton:hover {
+  background-color: rgb(118, 118, 156);
+}
+
+#resetButton {
+  background-color: rgb(120, 120, 206);
+  border-radius: 4px;
+  font-size: 20px;
+  cursor: pointer;
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+}
+
+#resetButton:hover {
+  background-color: rgb(118, 118, 156);
+}
+
+.showChooseBoard{
+  text-align: center;
+  font-size: 17px;
+  text-decoration: underline;
+  color: blue;
+  cursor: pointer;
+}
+
+.showTime{
+  text-align: center;
+  background-color: aquamarine;
+}
+
+h1{
+  text-align: center;
+}
+
+.container {
+  display: flex;
+  flex-direction: column; /* 垂直排列 */
+  align-items: center; /* 水平置中 */
+  justify-content: center; /* 垂直置中 */
+  height: 100vh; /* 讓容器填滿整個螢幕 */
+}
