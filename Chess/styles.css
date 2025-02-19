@@ -1,0 +1,97 @@
+body {
+  background-color: #7f9a64;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  padding: 0px;
+}
+
+h1 {
+  font-size: 50px;
+}
+
+.mainButton {
+  font-size: 20px;
+}
+
+.boardButton {
+  width: 50px;
+  height: 50px;
+  font-size: 40px;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;  /* 水平置中 */
+  align-items: center;      /* 垂直置中 */
+}
+
+#newcontent {
+  display: grid;
+  grid-template-columns: repeat(8, 50px);
+  grid-template-rows: repeat(8, 50px);
+  gap: 0;
+}
+
+.blackPiece{
+  color : black;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); 
+}
+
+.whitePiece{
+  color : white;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); 
+}
+
+.selectedPiece{
+  color : rgb(192, 185, 185);
+  
+  font-size: 50px;
+}
+
+.redPiece{
+  color : rgb(255, 0, 0);
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); 
+}
+
+.oddBoard{
+  background-color : #779556;
+}
+
+.evenBoard{
+  background-color : #ebecd0;
+}
+
+.gameOverScreen {
+  text-align: center;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+.gameOverScreen h2 {
+  font-size: 24px;
+  margin-bottom: 15px;
+}
+
+#restartGame {
+  font-size: 18px;
+  padding: 10px 20px;
+  border: none;
+  background-color: #ffcc00;
+  color: black;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#restartGame:hover {
+  background-color: #ffdd44;
+}
