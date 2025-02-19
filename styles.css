@@ -1,0 +1,120 @@
+/* 全局樣式 */
+body {
+  font-family: 'Arial', sans-serif;
+  text-align: center;
+  background: linear-gradient(135deg, #1e3c72, #2a5298);
+  color: rgb(209, 156, 156);
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+/* 頁首 */
+header {
+  padding: 20px;
+}
+
+h1 {
+  font-size: 3em;
+  text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.5);
+}
+
+/* 遊戲區 */
+.game-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+/* 遊戲卡片 */
+.game-card {
+  width: 200px;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 15px;
+  padding: 15px;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+  position: relative;
+  overflow: hidden;
+  perspective: 1000px;
+}
+
+/* 3D hover 效果 */
+.game-card:hover {
+  transform: scale(1.1) rotateX(5deg) rotateY(5deg);
+  box-shadow: 0 8px 20px rgba(255, 255, 255, 0.4);
+}
+
+/* 發光效果 */
+.game-card::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.4) 10%, transparent 50%);
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+
+.game-card:hover::before {
+  opacity: 1;
+  animation: glow-animation 1.5s infinite linear;
+}
+
+@keyframes glow-animation {
+  0% { transform: translate(0, 0); }
+  50% { transform: translate(20px, 20px); }
+  100% { transform: translate(0, 0); }
+}
+
+/* 遊戲圖片 */
+.game-card img {
+  width: 100%;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+/* 懸停時圖片微微放大 */
+.game-card:hover img {
+  transform: scale(1.1);
+}
+
+/* 進場動畫 */
+.game-card {
+  opacity: 0;
+  transform: translateY(50px);
+  animation: fadeInUp 0.8s ease-in-out forwards;
+}
+
+@keyframes fadeInUp {
+  0% {
+      opacity: 0;
+      transform: translateY(50px);
+  }
+  100% {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+/* 為不同卡片設置不同的進場延遲 */
+.game-card:nth-child(1) { animation-delay: 0.2s; }
+.game-card:nth-child(2) { animation-delay: 0.4s; }
+.game-card:nth-child(3) { animation-delay: 0.6s; }
+.game-card:nth-child(4) { animation-delay: 0.8s; }
+.game-card:nth-child(5) { animation-delay: 1.0s; }
+.game-card:nth-child(6) { animation-delay: 1.2s; }
+
+/* 底部 */
+footer {
+  margin-top: 20px;
+  padding: 10px;
+  background: rgba(0, 0, 0, 0.3);
+}
